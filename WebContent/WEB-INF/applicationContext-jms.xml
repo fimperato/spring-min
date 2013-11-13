@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- jms factory -->
+	<bean id="jmsFactory" class="com.tibco.tibjms.TibjmsConnectionFactory">
+		<property name="serverUrl" value="tcp://ensv11rk.eni.pri:9960" />
+		<property name="userName" value="admin" />
+		<property name="userPassword" value="emsdev.DIVGP"></property>
+
+	</bean>
+	<bean id="myJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory">
+			<bean class="org.springframework.jms.connection.SingleConnectionFactory">
+				<property name="targetConnectionFactory">
+					<ref bean="jmsFactory" />
+				</property>
+			</bean>
+		</property>
+		<!-- SVIL -->
+		<property name="defaultDestinationName" value="DIVGP.DEV.DOC.NOMSEND.CODB.BW" />
+
+		<!--
+			Local <property name="defaultDestinationName"
+			value="DIVGP.TMP.DOC.NOMSEND.CODB.BW"/>
+		-->
+	</bean>
+	<bean id="jmsService" class="com.eni.doc.domain.service.JmsServiceImpl">
+		<property name="jmsTemplate">
+			<ref bean="myJmsTemplate" />
+		</property>
+	</bean>
