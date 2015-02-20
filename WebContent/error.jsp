@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<f:loadBundle basename="com.eni.docmin.resources.messages" var="msg" />
+	<!-- <f:loadBundle basename="docmin.resources.messages" var="msg" /> -->
 
 	<table id="titleTable">
 		<tr>
