@@ -18,7 +18,7 @@
 </head>
 <body>
 <f:view>
-	<f:loadBundle basename="com.eni.docmin.resources.messages" var="msg" />
+	<!-- <f:loadBundle basename="docmin.resources.messages" var="msg" /> -->
 
 	<div id="titleBar">
 
