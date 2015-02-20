@@ -8,7 +8,6 @@
 <html>
 <head>
 <meta http-equiv="refresh" content="0;url=/DocMin/start.jsf">
-
-Testo_1
+Testo_1-c
 </head>
 </html>
